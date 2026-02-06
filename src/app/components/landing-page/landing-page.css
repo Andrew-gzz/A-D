@@ -1,0 +1,116 @@
+:root{
+  --c1:#6687A1;
+  --c2:#92A9C0;
+  --c3:#B8C9D8;
+  --c4:#E0E5E9;
+  --c5:#F0F3F5;
+}
+
+.invitation-page{
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 50% 10%, rgba(146,169,192,0.35), transparent 60%),
+    linear-gradient(180deg, var(--c5), #ffffff);
+}
+
+.invitation-card{
+  width: min(520px, 92vw);
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(102,135,161,0.22);
+  border-radius: 22px;
+  box-shadow: 0 18px 55px rgba(0,0,0,0.10);
+  backdrop-filter: blur(8px);
+}
+
+/* Tipografías */
+.ad-title{
+  font-family: "Pinyon Script", cursive;
+  font-size: 56px;
+  line-height: 1;
+  font-style: italic;
+  color: #1c1c1c;
+}
+
+.title-script{
+  font-family: "Pinyon Script", cursive;
+  font-size: 54px;
+  line-height: 1.05;
+  font-style: italic;
+  color: #1c1c1c;
+}
+
+.subtitle-cormorant{
+  font-family: "Cormorant", serif;
+  font-size: 18px;
+  color: #2a2a2a;
+  opacity: 0.92;
+}
+
+.date-script{
+  font-family: "Pinyon Script", cursive;
+  font-size: 34px;
+  font-style: italic;
+  color: #1c1c1c;
+}
+
+.date-sep{
+  margin: 0 10px;
+  opacity: 0.45;
+}
+
+.countdown-label{
+  font-family: "Cormorant", serif;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.countdown-time{
+  font-family: "Mongolian Baiti", "Times New Roman", serif;
+  font-size: 34px;
+  letter-spacing: 0.08em;
+  color: #1c1c1c;
+}
+
+.countdown-units{
+  font-family: "Cormorant", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  opacity: 0.82;
+}
+
+/* Itinerario */
+.itinerary{
+  display: grid;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.it-row{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(102,135,161,0.10), rgba(240,243,245,0.0));
+  border: 1px solid rgba(102,135,161,0.14);
+}
+
+.it-event, .it-time{
+  font-family: "Pinyon Script", cursive;
+  font-size: 26px;
+  color: #1c1c1c;
+}
+
+/* Mejor en pantallas muy chicas */
+@media (max-width: 380px){
+  .title-script{ font-size: 46px; }
+  .ad-title{ font-size: 50px; }
+  .date-script{ font-size: 30px; }
+  .countdown-time{ font-size: 30px; }
+  .it-event, .it-time{ font-size: 24px; }
+}

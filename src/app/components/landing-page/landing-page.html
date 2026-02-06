@@ -1,0 +1,69 @@
+<!-- Google Fonts (solo para este componente) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400;1,600&family=Pinyon+Script&display=swap"
+  rel="stylesheet"
+/>
+
+<div class="invitation-page d-flex align-items-center justify-content-center py-5">
+  <div class="invitation-card text-center px-4 px-md-5 py-5">
+
+    <!-- A&D -->
+    <div class="ad-title mb-3">A&amp;D</div>
+
+    <!-- Nuestra Boda -->
+    <div class="title-script mb-2">Nuestra boda</div>
+
+    <!-- Texto -->
+    <div class="subtitle-cormorant mb-4">
+      Tenemos el honor de invitarte a nuestra boda que se llevará acabo el día Sábado
+    </div>
+
+    <!-- Fecha -->
+    <div class="date-script mb-5">
+      <span>18</span>
+      <span class="date-sep">|</span>
+      <span>Abril</span>
+      <span class="date-sep">|</span>
+      <span>8:00pm</span>
+    </div>
+
+    <!-- Contador -->
+    <div class="countdown-label mb-2">FALTAN</div>
+
+    <div class="countdown-time mb-2">
+      {{ countdown.days }} : {{ countdown.hours }} : {{ countdown.minutes }} : {{ countdown.seconds }}
+    </div>
+
+    <div class="countdown-units mb-5">
+      <span>DÍAS</span>
+      <span>HORAS</span>
+      <span>MIN</span>
+      <span>SEG</span>
+    </div>
+
+    <!-- Itinerario -->
+    <div class="title-script mb-4">Itinerario</div>
+
+    <div class="itinerary">
+      <div class="it-row">
+        <div class="it-event">Misa</div>
+        <div class="it-time">4:00 PM</div>
+      </div>
+      <div class="it-row">
+        <div class="it-event">Recepción</div>
+        <div class="it-time">7:00 PM</div>
+      </div>
+      <div class="it-row">
+        <div class="it-event">Entrada de los novios</div>
+        <div class="it-time">7:30 PM</div>
+      </div>
+      <div class="it-row">
+        <div class="it-event">Cena</div>
+        <div class="it-time">8:00 PM</div>
+      </div>
+    </div>
+
+  </div>
+</div>
