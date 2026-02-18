@@ -336,6 +336,10 @@
   filter: drop-shadow(0 18px 26px rgba(0,0,0,0.12));
 }
 
+.music-couple:hover{
+  transform: scale(1.1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
 .music-player-wrap{
   width: min(320px, 92%);
 }
@@ -484,9 +488,8 @@
 
   .invite-shell {
     width: 100%;
-    max-width: 520px; /* Evita que la invitación se estire a los lados */
-    border-radius: 16px; /* Bordes suaves para que parezca una tarjeta flotante */
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+    max-width: 520px; 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15); 
   }
 
   .sobre-img { width: 380px; }
@@ -519,14 +522,14 @@
   .divider-final { width: 300px; height: 130px; }
   
   .music-player-wrap { width: 85%; }
-  .music-title { font-size: 1.4rem; }
+  .music-title { font-size: 1.5rem; }
 }
 
 /* Laptops y Pantallas Grandes (1024px y superior) */
 @media (min-width: 1024px) {
 
   .invite-shell {
-    max-width: 600px; 
+    max-width: 600px;
   }
 
   .sobre-img { width: 440px; }
@@ -538,11 +541,11 @@
 
   .arch-card {
     width: 82%;
-    border-radius: 200px 200px 24px 24px;
+    border-radius: 20rem 20rem 24px 24px;
   }
   
   .arch-card::before {
-    border-radius: 190px 190px 20px 20px;
+    border-radius: 20rem 20rem 24px 24px;
   }
 
   .countdown-time { font-size: 34px; }
@@ -551,6 +554,10 @@
   .it-text { font-size: 1.15rem; }
   
   .divider-final { width: 340px; height: 140px; }
+
+  .music-title { font-size: 1.8rem; }
+
+  .music-meta{ font-size: 1rem; }
 
   .music-couple { width: 65%; }
   
@@ -561,23 +568,50 @@
 
 /* Monitores Ultra Grandes (1440px y superior) */
 @media (min-width: 1440px) {
-  .it-icon{
+
+  .it-icon, .it-icon-2{
     width: 76px;
     height: 76px;
   }
+  
   .it-img{
     width: 76px;
     height: 76px;
   }
-  .invite-shell {
-    max-width: 680px;
+
+  .arch-card{
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  .it-block{
+    width: 100%;
+  }
+
+  .music-player-wrap{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .it-title { 
+    font-size: 2rem; 
+  }
+  .it-text { 
+    font-size: 1.4rem; 
+  }
+
+  .it-pill{
+    font-size: 1.5rem;
+  }
+
   .flores-bg{
     top: calc(100% - 190px);
   }
   .countdown-units{
     font-size: 1rem;
   }
+
   .names { font-size: 76px; }
+
   .arch-card { width: 90%; }
 }

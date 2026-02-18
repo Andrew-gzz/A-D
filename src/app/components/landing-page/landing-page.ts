@@ -272,7 +272,7 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
 
   private initRevealAnimations(): void {
     const elements = Array.from(
-      this.elRef.nativeElement.querySelectorAll('.it-title, .it-icon, .it-icon-2')
+      this.elRef.nativeElement.querySelectorAll('.it-title, .it-icon, .it-text, .it-icon-2')
     ) as HTMLElement[];
 
     elements.forEach(el => el.classList.add('reveal-init'));
