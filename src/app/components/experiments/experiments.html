@@ -1,0 +1,17 @@
+<div class="exp-wrap">
+  <div class="exp-controls">
+    <label for="flagSelect">Bandera:</label>
+    <select id="flagSelect" (change)="onFlagChange($any($event.target).value)">
+      <option value="" disabled selected>-- Selecciona un país --</option>
+      <option *ngFor="let f of flags" [value]="f.file">
+        {{ f.label }}
+      </option>
+    </select>
+  </div>
+
+  <div #canvasHost class="exp-canvas"></div>
+  
+  <div class="exp-hint">
+    Arrastra para rotar · Scroll para zoom · Click derecho para mover
+  </div>
+</div>

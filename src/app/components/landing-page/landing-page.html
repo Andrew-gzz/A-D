@@ -1,69 +1,216 @@
-<!-- Google Fonts (solo para este componente) -->
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,600;1,400;1,600&family=Pinyon+Script&display=swap"
   rel="stylesheet"
 />
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
-<div class="invitation-page d-flex align-items-center justify-content-center py-5">
-  <div class="invitation-card text-center px-4 px-md-5 py-5">
 
-    <!-- A&D -->
-    <div class="ad-title mb-3">A&amp;D</div>
-
-    <!-- Nuestra Boda -->
-    <div class="title-script mb-2">Nuestra boda</div>
-
-    <!-- Texto -->
-    <div class="subtitle-cormorant mb-4">
-      Tenemos el honor de invitarte a nuestra boda que se llevará acabo el día Sábado
+<div class="invite-wrap">
+  <div class="invite-shell">
+    <div class="it-msj">
+      <img class="flores-bg-2" src="assets/Flores.png" alt="Flores">
+      <img src="assets/Sobre.svg" alt="Sobre" class="sobre-img">
     </div>
+    <!-- CONTENIDO SUPERIOR -->
+    <div class="top-copy text-center">
+      <div class="small-title">Nuestra boda</div>
 
-    <!-- Fecha -->
-    <div class="date-script mb-5">
-      <span>18</span>
-      <span class="date-sep">|</span>
-      <span>Abril</span>
-      <span class="date-sep">|</span>
-      <span>8:00pm</span>
-    </div>
+      <div class="names">Aylin y Daniel</div>
 
-    <!-- Contador -->
-    <div class="countdown-label mb-2">FALTAN</div>
-
-    <div class="countdown-time mb-2">
-      {{ countdown.days }} : {{ countdown.hours }} : {{ countdown.minutes }} : {{ countdown.seconds }}
-    </div>
-
-    <div class="countdown-units mb-5">
-      <span>DÍAS</span>
-      <span>HORAS</span>
-      <span>MIN</span>
-      <span>SEG</span>
-    </div>
-
-    <!-- Itinerario -->
-    <div class="title-script mb-4">Itinerario</div>
-
-    <div class="itinerary">
-      <div class="it-row">
-        <div class="it-event">Misa</div>
-        <div class="it-time">4:00 PM</div>
+      <div class="subtitle">
+        Tenemos el honor de invitarte a celebrar nuestro matrimonio, que se llevará acabo el día
       </div>
-      <div class="it-row">
-        <div class="it-event">Recepción</div>
-        <div class="it-time">7:00 PM</div>
+
+      <div class="date-grid">
+        <div class="date-col">
+          <div class="date-label">Sábado</div>
+          <div class="date-big">18<span class="date-month">Abril</span></div>
+        </div>
+
+        <div class="date-divider"></div>
+
+        <div class="date-col">
+          <div class="date-label">Celebración</div>
+          <div class="date-big">8:00<span class="date-month">pm</span></div>
+        </div>
       </div>
-      <div class="it-row">
-        <div class="it-event">Entrada de los novios</div>
-        <div class="it-time">7:30 PM</div>
-      </div>
-      <div class="it-row">
-        <div class="it-event">Cena</div>
-        <div class="it-time">8:00 PM</div>
-      </div>
+      <!-- Flores -->
+      <img class="flores-bg" src="assets/Flores.png" alt="Flores">
+
     </div>
 
+    <!-- TARJETA ARCO -->
+    <div class="arch-card mx-auto">
+      <div class="arch-inner text-center" >
+        <div class="countdown-label">FALTAN</div>
+
+        <div class="countdown-time">
+          {{ countdown.days }} : {{ countdown.hours }} : {{ countdown.minutes }} : {{ countdown.seconds }}
+        </div>
+
+        <div class="countdown-units">
+          <span>DÍAS</span><span>HORAS</span><span>MIN</span><span>SEG</span>
+        </div>
+
+        <div class="divider-final"></div>
+
+        <!-- ITINERARIO -->
+        <div class="it-block">
+          <div class="it-icon">
+            <img class="it-img" src="assets/iglesia.png" alt="Icono iglesia">
+          </div>
+          <div class="it-title">Misa</div>
+          <div class="it-text">Parroquia San Jorge Martir <br> San Nicolás de los Garza <br> Av. Las Puentes 801</div>
+          <div class="it-pill">4:00 pm</div>
+        </div>
+
+        <div class="divider-final"></div>
+
+        <div class="it-block">
+          <div class="it-icon">
+              <img class="it-img" src="assets/arco-de-boda.png" alt="Recepción">
+          </div>
+          <div class="it-title">Recepción</div>
+          <div class="it-text">Altessa Eventos <br>Av Raúl Salinas Lozano <br> Paseo 727, 1101 Nv.3</div>
+          <div class="it-pill">7:30 pm</div>
+        </div>
+
+        <div class="divider-final"></div>
+
+        <div class="it-block">
+          <div class="it-icon">
+            <img class="it-img" src="assets/pareja.png" alt="Entrada de los novios">
+          </div>
+          <div class="it-title">Entrada de los novios </div>
+          <div class="it-text">Altessa Eventos</div>
+          <div class="it-pill">8:00 pm</div>
+        </div>
+        <!-- Cena -->
+        <div class="divider-final"></div>
+
+        <div class="it-block">
+          <div class="it-icon">
+            <img class="it-img" src="assets/cena-romantica.png" alt="Icono cena">
+          </div>
+          <div class="it-title">Cena</div>
+          <div class="it-text">Altessa Eventos</div>
+          <div class="it-pill">9:30 pm</div>
+        </div>
+
+        <!--Seccion de musica--> 
+        <div class="divider-final"></div> 
+
+
+        <div class="music-block text-center"> 
+          <div class="music-title">Escucha nuestra canción</div> 
+          <img class="music-couple my-3" src="assets/Enamorados.jpg" alt="Aylin y Daniel" />
+        </div>
+
+        <div class="music-player-wrap mx-auto">
+
+          <div class="music-meta">
+            {{ currentSongName }}
+          </div>
+
+
+          <div class="music-progress" (click)="seek($event)">
+            <div class="music-progress-fill" [style.width.%]="progress"></div>
+            <div class="music-progress-dot" [style.left.%]="progress"></div>
+          </div>
+
+          <div class="music-controls">
+            <!-- Anterior (skip_next rotado) -->
+            <button class="m-btn" type="button" (click)="prev()" aria-label="Anterior">
+              <img src="assets/skip_next.svg" class="m-icon m-icon-prev" alt="Anterior" />
+            </button>
+
+            <!-- Play / Pause (central) -->
+            <button class="m-btn m-btn-main" type="button" (click)="togglePlay()" aria-label="Play/Pausa">
+              <img
+                [src]="isPlaying ? 'assets/pause_circle.svg' : 'assets/play_circle.svg'"
+                class="m-icon m-icon-main"
+                alt="Play/Pausa"
+              />
+            </button>
+
+            <!-- Siguiente -->
+            <button class="m-btn" type="button" (click)="next()" aria-label="Siguiente">
+              <img src="assets/skip_next.svg" class="m-icon" alt="Siguiente" />
+            </button>
+          </div>
+
+          <!-- Audio -->
+          <audio
+            #weddingAudio
+            class="music-audio"
+            src="assets/Paramore The Only Exception.mp3"
+            preload="auto"
+            loop
+            playsinline
+          ></audio>
+        </div>
+
+        <!-- Codigo de vestimenta -->
+        <div class="divider-final"></div>
+        
+        <div class="it-block">
+            <div class="it-icon-2">
+              <img class="it-img" src="assets/vestido-de-novia.png" alt="Código de vestimenta">
+            </div>
+            <div class="it-title">Codigo de vestimenta </div>
+            <div class="it-text">Ropa formal y elegante</div>
+        </div>
+
+        <!-- Obsequio -->
+        <div class="it-block  my-5">
+            <div class="it-icon-2">
+              <img class="it-img" src="assets/sobre.png" alt="Obsequio">
+            </div>
+            <div class="it-title">Obsequio</div>
+            <div class="it-text">Se recomienda el uso de sobre</div>
+        </div>
+
+        <!-- No niños -->
+        <div class="it-block my-5">
+            <div class="it-icon-2">
+              <img class="it-img" src="assets/dia-internacional-del-nino.png" alt="Icono no niños">
+            </div>
+            <div class="it-title">No niños</div>
+            <div class="it-text">No asistir con niños</div>
+        </div> 
+
+        <div class="divider-final"></div>
+
+        <!-- Imagen A&D -->
+        <div class="ad-section">
+              <img src="assets/AD_SVG.svg" alt="AD" class="ad-logo img-fluid">
+        </div>
+
+        <div class="it-block">
+          <div class="it-title">¡Te esperamos!</div>
+          <div class="it-text">Escanea para conocer las ubicaciones</div>
+          <div class="qr-grid mt-3">
+
+            <div class="qr-item-wrapper">
+              <div class="qr-item">
+                <img src="assets/Parroquia.png" alt="QR de la Parroquia" class="qr-img">
+              </div>
+              <div class="it-text">Parroquia</div>
+            </div>
+
+            <div class="qr-item-wrapper">
+              <div class="qr-item">
+                <img src="assets/SalonDeEventos.png" alt="QR del salón de eventos" class="qr-img">
+              </div>
+              <div class="it-text">Salón</div>
+            </div>
+
+          </div>
+      </div>
+    </div>
   </div>
-</div>
+</div>  

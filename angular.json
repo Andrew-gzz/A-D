@@ -21,7 +21,8 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                "output": "assets"
               }
             ],
             "styles": [
@@ -53,6 +54,11 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+          "options": {
+            "allowedHosts": [
+              "unrealizable-gavin-nonindependently.ngrok-free.dev"
+            ]
+          },
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
