@@ -27,7 +27,7 @@
   max-width: 600px; 
   margin: auto;
 
-  background: url("/assets/Fondo.png");
+  background: url("../../../assets/Fondo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -462,7 +462,7 @@
   max-width: 60%;
   height: 120px;
   margin: 0 auto;
-  background: url("/assets/Separador.png") center/contain no-repeat;
+  background: url("../../../assets/Separador.png") center/contain no-repeat;
 }
 
 .reveal-init{
