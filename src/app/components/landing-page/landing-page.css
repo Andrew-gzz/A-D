@@ -26,8 +26,6 @@
   justify-content: center;
   max-width: 600px; 
   margin: auto;
-
-  background: url("../../../assets/Fondo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -462,7 +460,16 @@
   max-width: 60%;
   height: 120px;
   margin: 0 auto;
-  background: url("../../../assets/Separador.png") center/contain no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .reveal-init{
