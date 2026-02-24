@@ -112,6 +112,10 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
     {
       name: 'The Only Exception - Paramore',
       src: 'assets/Paramore The Only Exception.mp3'
+    },
+    {
+      name: 'Level One - Scott Pilgrim',
+      src: 'assets/Level One.mp3'
     }
   ];
 
@@ -271,8 +275,9 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
   // =========================================================
 
   private initRevealAnimations(): void {
+    // 1. Agregamos '.divider-final' a la lista de elementos a observar
     const elements = Array.from(
-      this.elRef.nativeElement.querySelectorAll('.it-title, .it-icon, .it-text, .it-icon-2')
+      this.elRef.nativeElement.querySelectorAll('.it-title, .it-icon, .it-text, .it-icon-2, .divider-final')
     ) as HTMLElement[];
 
     elements.forEach(el => el.classList.add('reveal-init'));
@@ -287,8 +292,14 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
           el.classList.remove('reveal-init');
           el.classList.add('reveal-show');
 
+          // 2. Lógica para elegir la animación
+          // Si el elemento tiene la clase 'divider-final', usa 'fadeIn', de lo contrario usa 'slideInUp'
+          const animationName = el.classList.contains('divider-final') 
+            ? 'animate__fadeIn' 
+            : 'animate__slideInUp';
+
           requestAnimationFrame(() => {
-            el.classList.add('animate__animated', 'animate__slideInUp');
+            el.classList.add('animate__animated', animationName);
           });
 
           this.observer?.unobserve(el);

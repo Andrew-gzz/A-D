@@ -253,7 +253,7 @@
   line-height: 1;
 }
 
-.it-text{
+.it-text, it-text-2{
   font-family: "Cormorant", medium;
   font-size: 1rem;
   color: var(--ink);
@@ -458,10 +458,10 @@
 }
 
 .divider-final{
-  width: 245px;           /* 🔥 el ancho real */
+  width: 245px;
   max-width: 60%;
   height: 120px;
-  margin: 0 auto;         /* centrado */
+  margin: 0 auto;
   background: url("/assets/Separador.png") center/contain no-repeat;
 }
 
@@ -486,12 +486,6 @@
 /* Tablets y Pantallas Medias (768px y superior) */
 @media (min-width: 768px) {
 
-  .invite-shell {
-    width: 100%;
-    max-width: 520px; 
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15); 
-  }
-
   .sobre-img { width: 380px; }
   .flores-bg-2 { width: 220%; }
   
@@ -509,6 +503,11 @@
   .arch-card {
     width: 88%; /* Se ajusta mejor dentro de la tarjeta restringida */
     margin-top: 24px;
+    border-radius: 20rem 20rem 24px 24px;
+  }
+
+  .arch-card::before {
+    border-radius: 20rem 20rem 24px 24px;
   }
 
   .countdown-time { font-size: 30px; }
@@ -517,12 +516,18 @@
   .it-icon { width: 52px; height: 52px; }
   .it-img { width: 52px; height: 52px; }
   .it-title { font-size: 1.6rem; }
-  .it-text { font-size: 1.1rem; max-width: 300px; }
+  .it-text, it-text-2 { font-size: 1.1rem; max-width: 300px; }
   
   .divider-final { width: 300px; height: 130px; }
   
   .music-player-wrap { width: 85%; }
   .music-title { font-size: 1.5rem; }
+
+  .qr-item { 
+    width: 120px;
+    height: 120px; 
+    border-radius: 18px;
+  }
 }
 
 /* Laptops y Pantallas Grandes (1024px y superior) */
@@ -551,7 +556,8 @@
   .countdown-time { font-size: 34px; }
   
   .it-title { font-size: 1.8rem; }
-  .it-text { font-size: 1.15rem; }
+
+  .it-text, .it-text-2 { font-size: 1.15rem; }
   
   .divider-final { width: 340px; height: 140px; }
 
@@ -564,6 +570,13 @@
   .qr-grid { gap: 48px; }
   .qr-item { width: 96px; height: 96px; border-radius: 20px; }
   .ad-logo { max-width: 220px; }
+
+  .qr-grid { gap: 60px; } /* Más espacio entre QRs */
+  .qr-item { 
+    width: 150px;  /* Aumentado de 96px */
+    height: 150px; 
+    border-radius: 24px; 
+  }
 }
 
 /* Monitores Ultra Grandes (1440px y superior) */
@@ -596,7 +609,7 @@
   .it-title { 
     font-size: 2rem; 
   }
-  .it-text { 
+  .it-text, it-text-2 { 
     font-size: 1.4rem; 
   }
 
@@ -614,4 +627,11 @@
   .names { font-size: 76px; }
 
   .arch-card { width: 90%; }
+
+  .qr-item { 
+    width: 180px;
+    height: 180px; 
+  }
+  
+  .qr-grid { gap: 80px; }
 }
