@@ -105,7 +105,16 @@
 
         <div class="music-block text-center"> 
           <div class="music-title">Escucha nuestra canción</div> 
-          <img class="music-couple my-3" src="assets/Enamorados.jpg" alt="Aylin y Daniel" />
+          <div class="carousel-container my-3">
+            <div class="carousel-track" [style.transform]="'translateX(-' + (currentCarouselIndex * 100) + '%)'">
+              <img 
+                *ngFor="let img of carouselImages" 
+                [src]="img" 
+                class="music-couple-slide" 
+                alt="Aylin y Daniel" 
+              />
+            </div>
+          </div>
         </div>
 
         <div class="music-player-wrap mx-auto">

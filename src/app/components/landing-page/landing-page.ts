@@ -43,6 +43,7 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
     // ===== Contador =====
     this.startCountdown();
+    this.startCarousel();
   }
 
   ngAfterViewInit(): void {
@@ -56,6 +57,9 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy(): void {
     // ===== Contador =====
     if (this.intervalId) clearInterval(this.intervalId);
+
+    // ===== Carrusel =====
+    if (this.carouselIntervalId) clearInterval(this.carouselIntervalId);
 
     // ===== Música =====
     this.removeGestureListeners();
@@ -313,4 +317,31 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
 
     elements.forEach(el => this.observer!.observe(el));
   }
+
+  // =========================================================
+  // ===================== Carrusel ==========================
+  // =========================================================
+
+  carouselImages: string[] = [
+  'assets/Enamorados.jpg',
+  'assets/DSC05273.jpg',
+  'assets/DSC05150.jpg',
+  'assets/DSC05350.jpg',
+  'assets/DSC05358.jpg',
+  'assets/DSC05532.jpg',
+];
+
+currentCarouselIndex = 0;
+private carouselIntervalId?: any;
+
+private startCarousel(): void {
+  this.carouselIntervalId = setInterval(() => {
+    this.nextSlide();
+  }, 4000); // Cambia cada 4 segundos
+}
+
+private nextSlide(): void {
+  this.currentCarouselIndex = (this.currentCarouselIndex + 1) % this.carouselImages.length;
+  this.cdr.detectChanges();
+}
 }
