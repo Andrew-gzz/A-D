@@ -316,12 +316,13 @@
 
 .music-title{
   font-family: "Cormorant", medium;
-  font-size: clamp(1rem, 4vw, 1.5rem);
+  font-size: clamp(1rem, 4vw, 1.8rem);
   color: rgba(10, 10, 10, 1);
   white-space: nowrap;
   text-align: center;
   margin-bottom: 6px;
 }
+
 /* Carrusel */
 .carousel-container {
   width: min(280px, 75%);
@@ -510,7 +511,9 @@
 
   .sobre-img { width: 380px; }
   .flores-bg-2 { width: 220%; }
-  
+  .flores-bg{
+    top: calc(100% - 200px);
+  }
   .names { font-size: 56px; }
   .small-title { font-size: 26px; }
   .subtitle { 
@@ -544,6 +547,7 @@
   
   .music-player-wrap { width: 85%; }
   .music-title { font-size: 1.5rem; }
+  .music-meta{ font-size: 1.2rem; }
 
   .qr-item { 
     width: 120px;
@@ -565,6 +569,9 @@
   .names { font-size: 68px; }
   .subtitle { max-width: 460px; font-size: 1.2rem; }
   .date-big { font-size: 46px; }
+  .date-month{
+    font-size: 1.2rem;
+  }
 
   .arch-card {
     width: 82%;
@@ -584,8 +591,6 @@
   .divider-final { width: 340px; height: 140px; }
 
   .music-title { font-size: 1.8rem; }
-
-  .music-meta{ font-size: 1rem; }
 
   .carousel-container {
     width: 65%;
@@ -631,7 +636,7 @@
   }
 
   .it-title { 
-    font-size: 2rem; 
+    font-size: 1.8rem; 
   }
   .it-text, it-text-2 { 
     font-size: 1.4rem; 
@@ -642,8 +647,9 @@
   }
 
   .flores-bg{
-    top: calc(100% - 190px);
+    top: calc(100% - 200px);
   }
+
   .countdown-units{
     font-size: 1rem;
   }

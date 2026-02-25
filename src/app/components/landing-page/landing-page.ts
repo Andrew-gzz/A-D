@@ -118,8 +118,12 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
       src: 'assets/Paramore The Only Exception.mp3'
     },
     {
-      name: 'Level One - Scott Pilgrim',
-      src: 'assets/Level One.mp3'
+      name: 'Eres tú - Carla Morrison',
+      src: 'assets/Eres tú - Carla Morrison.mp3'
+    },
+    {
+      name: 'Regalo De Dios - Julión Álvarez',
+      src: 'assets/Regalo De Dios - Julión Álvarez.mp3'
     }
   ];
 

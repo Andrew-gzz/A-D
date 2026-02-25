@@ -10,5 +10,5 @@ import { Footer } from "./components/shared/footer/footer";
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Invitacion');
+  protected readonly title = signal('A&D');
 }
