@@ -5,11 +5,11 @@ import {
   AfterViewInit,
   ElementRef,
   ViewChild,
-  ChangeDetectorRef
+  ChangeDetectorRef,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-type Countdown = { days: string; hours: string; minutes: string; seconds: string; };
+type Countdown = { days: string; hours: string; minutes: string; seconds: string };
 
 type Song = {
   name: string;
@@ -24,7 +24,6 @@ type Song = {
   styleUrls: ['./landing-page.css'],
 })
 export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
-
   @ViewChild('weddingAudio') weddingAudio?: ElementRef<HTMLAudioElement>;
 
   private observer?: IntersectionObserver;
@@ -37,7 +36,7 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(
     private cdr: ChangeDetectorRef,
-    private elRef: ElementRef<HTMLElement>
+    private elRef: ElementRef<HTMLElement>,
   ) {}
 
   ngOnInit(): void {
@@ -115,16 +114,16 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
   songs: Song[] = [
     {
       name: 'The Only Exception - Paramore',
-      src: 'assets/Paramore The Only Exception.mp3'
+      src: 'assets/Paramore The Only Exception.mp3',
     },
     {
       name: 'Eres tú - Carla Morrison',
-      src: 'assets/Eres tú - Carla Morrison.mp3'
+      src: 'assets/Eres tú - Carla Morrison.mp3',
     },
     {
       name: 'Regalo De Dios - Julión Álvarez',
-      src: 'assets/Regalo De Dios - Julión Álvarez.mp3'
-    }
+      src: 'assets/Regalo De Dios - Julión Álvarez.mp3',
+    },
   ];
 
   currentSongIndex = 0;
@@ -285,10 +284,12 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
   private initRevealAnimations(): void {
     // 1. Agregamos '.divider-final' a la lista de elementos a observar
     const elements = Array.from(
-      this.elRef.nativeElement.querySelectorAll('.it-title, .it-icon, .it-text, .it-icon-2, .divider-final')
+      this.elRef.nativeElement.querySelectorAll(
+        '.it-title, .it-icon, .it-text, .it-icon-2, .divider-final',
+      ),
     ) as HTMLElement[];
 
-    elements.forEach(el => el.classList.add('reveal-init'));
+    elements.forEach((el) => el.classList.add('reveal-init'));
 
     this.observer = new IntersectionObserver(
       (entries) => {
@@ -302,8 +303,8 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
 
           // 2. Lógica para elegir la animación
           // Si el elemento tiene la clase 'divider-final', usa 'fadeIn', de lo contrario usa 'slideInUp'
-          const animationName = el.classList.contains('divider-final') 
-            ? 'animate__fadeIn' 
+          const animationName = el.classList.contains('divider-final')
+            ? 'animate__fadeIn'
             : 'animate__slideInUp';
 
           requestAnimationFrame(() => {
@@ -315,11 +316,11 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
       },
       {
         threshold: 0.01,
-        rootMargin: '0px 0px -20% 0px'
-      }
+        rootMargin: '0px 0px -20% 0px',
+      },
     );
 
-    elements.forEach(el => this.observer!.observe(el));
+    elements.forEach((el) => this.observer!.observe(el));
   }
 
   // =========================================================
@@ -327,25 +328,25 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
   // =========================================================
 
   carouselImages: string[] = [
-  'assets/Enamorados.jpg',
-  'assets/DSC05273.jpg',
-  'assets/DSC05150.jpg',
-  'assets/DSC05350.jpg',
-  'assets/DSC05358.jpg',
-  'assets/DSC05532.jpg',
-];
+    'assets/Enamorados.jpg',
+    'assets/DSC05273.jpg',
+    'assets/DSC05150.jpg',
+    'assets/DSC05350.jpg',
+    'assets/DSC05358.jpg',
+    'assets/DSC05532.jpg',
+  ];
 
-currentCarouselIndex = 0;
-private carouselIntervalId?: any;
+  currentCarouselIndex = 0;
+  private carouselIntervalId?: any;
 
-private startCarousel(): void {
-  this.carouselIntervalId = setInterval(() => {
-    this.nextSlide();
-  }, 4000); // Cambia cada 4 segundos
-}
+  private startCarousel(): void {
+    this.carouselIntervalId = setInterval(() => {
+      this.nextSlide();
+    }, 4000); // Cambia cada 4 segundos
+  }
 
-private nextSlide(): void {
-  this.currentCarouselIndex = (this.currentCarouselIndex + 1) % this.carouselImages.length;
-  this.cdr.detectChanges();
-}
+  private nextSlide(): void {
+    this.currentCarouselIndex = (this.currentCarouselIndex + 1) % this.carouselImages.length;
+    this.cdr.detectChanges();
+  }
 }
