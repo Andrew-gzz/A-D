@@ -141,13 +141,20 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
     // Cargar 1ra canción en el <audio>
     this.loadSong(this.currentSongIndex);
 
+    const el = this.weddingAudio?.nativeElement;
+    if (el) {
+      el.volume = 0.1; // 70%
+      el.autoplay = true;
+      el.preload = 'auto';
+    }
+
     // Eventos del audio
     this.bindAudioEvents();
 
     // Intento autoplay
     this.tryPlayAudio();
 
-    // Fallback por gesto del usuario (si el navegador bloquea autoplay)
+    // Fallback por gesto del usuario
     this.userGestureHandler = () => {
       this.tryPlayAudio();
       this.removeGestureListeners();
@@ -166,9 +173,9 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
     if (!song) return;
 
     el.src = song.src;
+    el.volume = 0.7; // 70%
     el.load();
 
-    // refresca nombre en UI
     this.cdr.detectChanges();
   }
 
@@ -221,13 +228,17 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
     const el = this.weddingAudio?.nativeElement;
     if (!el) return;
 
+    el.volume = 0.7; // asegurar 70%
+
     if (el.paused) {
       el.play()
         .then(() => {
           this.isPlaying = true;
           this.cdr.detectChanges();
         })
-        .catch(() => {});
+        .catch((err) => {
+          console.log('Autoplay bloqueado por el navegador:', err);
+        });
     }
   }
 
