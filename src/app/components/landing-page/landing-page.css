@@ -1,3 +1,6 @@
+/* =========================================================
+   VARIABLES GLOBALES / PALETA / TIPOGRAFÍAS RESPONSIVAS
+   ========================================================= */
 :root {
   --ink: rgba(10, 10, 10, 1);
   --muted: #4a4a4a;
@@ -20,6 +23,9 @@
   --fs-hero: clamp(3rem, 8vw, 5rem);
 }
 
+/* =========================================================
+   CONTENEDOR PRINCIPAL DE LA LANDING
+   ========================================================= */
 .invite-wrap {
   min-height: 100vh;
   display: flex;
@@ -31,7 +37,9 @@
   background-repeat: no-repeat;
 }
 
-/*Sobre de invitacion*/
+/* =========================================================
+   SOBRE DE INVITACIÓN / PORTADA
+   ========================================================= */
 .it-msj {
   position: relative;
   text-align: center;
@@ -59,7 +67,9 @@
   pointer-events: none;
 }
 
-/*Carta de invitacion*/
+/* =========================================================
+   CARTA / SHELL PRINCIPAL
+   ========================================================= */
 .invite-shell {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -79,7 +89,9 @@
   pointer-events: none;
 }
 
-/* TEXTOS SUPERIORES */
+/* =========================================================
+   TEXTOS SUPERIORES / ENCABEZADO
+   ========================================================= */
 .top-copy {
   position: relative;
   z-index: 2;
@@ -109,7 +121,9 @@
   margin: 0 auto 14px;
 }
 
-/* Fecha en 2 columnas con divisor */
+/* =========================================================
+   BLOQUE DE FECHA EN DOS COLUMNAS
+   ========================================================= */
 .date-grid {
   display: flex;
   justify-content: center;
@@ -151,7 +165,9 @@
   margin: 6px 0;
 }
 
-/* TARJETA ARCO */
+/* =========================================================
+   TARJETA PRINCIPAL TIPO ARCO
+   ========================================================= */
 .arch-card {
   margin-top: 18px;
   width: min(360px, 92%);
@@ -165,6 +181,7 @@
 
 .arch-inner {
   padding: 28px 18px 18px;
+  text-align: center;
 }
 
 .arch-card::before {
@@ -176,6 +193,9 @@
   pointer-events: none;
 }
 
+/* =========================================================
+   CONTADOR REGRESIVO
+   ========================================================= */
 .countdown-label {
   font-family: 'Cormorant', serif;
   padding-top: 1.3rem;
@@ -211,7 +231,16 @@
   margin-right: auto;
 }
 
-/* Itinerario dentro del arco */
+.alfredo {
+  font-size: 2.2rem;
+}
+
+.alfredo2 {
+  font-size: 1.2rem;
+}
+/* =========================================================
+   BLOQUES DE ITINERARIO Y CONTENIDO INTERNO
+   ========================================================= */
 .it-block {
   display: flex;
   flex-direction: column;
@@ -268,7 +297,9 @@ it-text-2 {
   color: var(--ink);
 }
 
-/* responsive tweaks */
+/* =========================================================
+   AJUSTES RESPONSIVOS PEQUEÑOS
+   ========================================================= */
 @media (max-width: 360px) {
   .envelope {
     width: 360px;
@@ -282,6 +313,9 @@ it-text-2 {
   }
 }
 
+/* =========================================================
+   ICONOS E IMÁGENES DE LOS BLOQUES
+   ========================================================= */
 .it-icon {
   width: 46px;
   height: 46px;
@@ -305,6 +339,9 @@ it-text-2 {
   transform: scale(1.2);
 }
 
+/* =========================================================
+   LOGO / MONOGRAMA A&D
+   ========================================================= */
 .ad-section {
   width: 100%;
   margin-bottom: 4rem;
@@ -317,6 +354,9 @@ it-text-2 {
   margin: 0 auto;
 }
 
+/* =========================================================
+   SECCIÓN DE MÚSICA Y CARRUSEL
+   ========================================================= */
 .music-block {
   padding: 6px 4px 2px;
 }
@@ -360,6 +400,9 @@ it-text-2 {
   transition: transform 0.3s ease;
 }
 
+/* =========================================================
+   REPRODUCTOR DE MÚSICA
+   ========================================================= */
 .music-player-wrap {
   width: min(320px, 92%);
 }
@@ -444,6 +487,9 @@ it-text-2 {
   display: none;
 }
 
+/* =========================================================
+   SECCIÓN DE QR
+   ========================================================= */
 .qr-grid {
   display: flex;
   justify-content: center;
@@ -477,6 +523,9 @@ it-text-2 {
   gap: 8px;
 }
 
+/* =========================================================
+   SEPARADORES VISUALES
+   ========================================================= */
 .divider-final {
   width: 245px;
   max-width: 60%;
@@ -494,6 +543,9 @@ it-text-2 {
   display: block;
 }
 
+/* =========================================================
+   CLASES AUXILIARES PARA REVEAL / ANIMACIONES
+   ========================================================= */
 .reveal-init {
   opacity: 0;
   visibility: hidden;
@@ -509,7 +561,7 @@ it-text-2 {
 }
 
 /* =========================================================
-   Ajustes Responsivos: Pantallas Medias y Grandes
+   AJUSTES RESPONSIVOS: PANTALLAS MEDIAS Y GRANDES
    ========================================================= */
 
 /* Tablets y Pantallas Medias (768px y superior) */
@@ -561,7 +613,12 @@ it-text-2 {
   .countdown-label {
     font-size: 1.5rem;
   }
-
+  .alfredo {
+    font-size: 3.8rem;
+  }
+  .alfredo2 {
+    font-size: 1.8rem;
+  }
   .it-icon {
     width: 52px;
     height: 52px;
@@ -641,6 +698,12 @@ it-text-2 {
     font-size: 34px;
   }
 
+  .alfredo {
+    font-size: 4rem;
+  }
+  .alfredo2 {
+    font-size: 1.6rem;
+  }
   .it-title {
     font-size: 1.8rem;
   }
@@ -747,5 +810,9 @@ it-text-2 {
 
   .qr-grid {
     gap: 80px;
+  }
+
+  .alfredo2 {
+    font-size: 1.8rem;
   }
 }

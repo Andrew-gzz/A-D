@@ -24,8 +24,14 @@ type Song = {
   styleUrls: ['./landing-page.css'],
 })
 export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
+  /* =========================================================
+     REFERENCIAS DEL TEMPLATE
+     ========================================================= */
   @ViewChild('weddingAudio') weddingAudio?: ElementRef<HTMLAudioElement>;
 
+  /* =========================================================
+     VARIABLES INTERNAS / CONTROLADORES
+     ========================================================= */
   private observer?: IntersectionObserver;
   private intervalId?: any;
 
@@ -39,9 +45,14 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
     private elRef: ElementRef<HTMLElement>,
   ) {}
 
+  /* =========================================================
+     CICLO DE VIDA
+     ========================================================= */
   ngOnInit(): void {
     // ===== Contador =====
     this.startCountdown();
+
+    // ===== Carrusel =====
     this.startCarousel();
   }
 
@@ -76,6 +87,7 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
   private readonly weddingDate = new Date(2026, 3, 18, 20, 0, 0).getTime();
 
   countdown: Countdown = { days: '00', hours: '00', minutes: '00', seconds: '00' };
+  isWeddingDay = false;
 
   private startCountdown(): void {
     this.updateCountdown();
@@ -87,6 +99,8 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
     const diff = this.weddingDate - now;
 
     if (diff <= 0) {
+      // ¡Llegó el día!
+      this.isWeddingDay = true;
       this.countdown = { days: '00', hours: '00', minutes: '00', seconds: '00' };
       if (this.intervalId) clearInterval(this.intervalId);
     } else {
@@ -105,7 +119,6 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
 
     this.cdr.detectChanges();
   }
-
   // =========================================================
   // ======================== MÚSICA ==========================
   // =========================================================
@@ -128,7 +141,7 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
 
   currentSongIndex = 0;
 
-  // UI
+  // UI del reproductor
   isPlaying = false;
   progress = 0;
 
@@ -179,6 +192,7 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
     this.cdr.detectChanges();
   }
 
+  // Botón play / pause
   togglePlay(): void {
     const el = this.weddingAudio?.nativeElement;
     if (!el) return;
@@ -190,6 +204,7 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
     }
   }
 
+  // Seek en la barra de progreso
   seek(ev: MouseEvent): void {
     const el = this.weddingAudio?.nativeElement;
     if (!el || !el.duration) return;
@@ -202,6 +217,7 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
     el.currentTime = pct * el.duration;
   }
 
+  // Canción anterior
   prev(): void {
     // Si quieres que sea "reiniciar canción" cuando vas avanzadito:
     const el = this.weddingAudio?.nativeElement;
@@ -218,6 +234,7 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
     this.tryPlayAudio();
   }
 
+  // Siguiente canción
   next(): void {
     this.currentSongIndex = (this.currentSongIndex + 1) % this.songs.length;
     this.loadSong(this.currentSongIndex);
@@ -335,7 +352,7 @@ export class LandingPage implements OnInit, OnDestroy, AfterViewInit {
   }
 
   // =========================================================
-  // ===================== Carrusel ==========================
+  // ======================= CARRUSEL =========================
   // =========================================================
 
   carouselImages: string[] = [
